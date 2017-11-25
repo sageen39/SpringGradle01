@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<!-- Setter Injection to property Name: receipe using setReceipe(String receipe) -->
+<bean id="pizza" class="com.aquarii.dishes.impl.Pizza">
+	<property name="receipe" value="PIZZA :: Flour only"></property>
+</bean>
+<!-- Setter Injection to property Name: receipe using setReceipe(String receipe) -->
+<bean id="dosa" class="com.aquarii.dishes.impl.Dosa">
+	<property name="receipe" value="DOSA :: Rice Only"/>
+</bean>
+
+<!-- Constructor Injection referencing BeanID-->
+<bean id="chris" class="com.aquarii.cooks.impl.ChrisImpl">
+<constructor-arg index="1" value="44"/>
+<constructor-arg index="0" ref = "pizza"/>
+
+</bean>
+
+
+</beans>
